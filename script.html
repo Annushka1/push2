@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon"
+          href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXEMqAGBIMC9WRU68WkdFZWxTMg5JLQkAl4h3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAclo4AIpfAARWRlOSUFfG/1FSqPVYRDx6//8xAIp5ZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArqKSAEs0KQBdRS5DUVCd7FBf8/9RUaTsXUY0Rko0MQCRgW8AAAAAAAAAAAAAAAAAAAAAAAAAAABxXUkAUTcaE2JJMDRiSShdUkZlt1Bc4/9PWdP/VkZUoYxpDgZ4YkQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX0YsJYl3Y7qGc1/fua+k+IN4hvpTV7n9YFqN/XFbQsleRSsrWkEmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIJvWpmwo5b8ubCu/qGp+v2xter9saqv/IJvYPppUTibUzgbJ0wwEREvGAcIAAAAAjUYDQEsEAcFRDw+AGJWVgCGdGDgqpyN/LG06PxTYvH+UmHx/5Se+v3Jwr/8mop56q+kmtqnmovKn5B/t5WFc6F2YUqYgm5ZpGlSOSheRSoAZ1A2msC4s/6Mlvr9TVzw/09e8P+iqPD9tamb/L+/3v2Klfb/kJny/6mw8v/Rzc//q52P/7Onm/FiSjA/XEInAGdPNVSai3rGvbrI+5qi8v+Ej/n9vri//L20sPyEj/b9S1vw/0tb8P+Sm/T9s6if/MjAtv6Me2egY0wzKnBbRhG+lmgATTMWF3ljSXOpnJDYysTI/bKmmPyvs+r8VGPx/k5d8P9odfT+vLjK/LmtoPyrnpD5X0YrYm9niBxvddM/AAAAADkfBAAAAAABXEImJW9YPpO2rKL2j5n4/Uxc8P9RYPH/pqvu/LGll/vIv7b8r6OV/pmJeMRZRDoYdWl7QQAAAAAAAAAAAAAAAGNLMgBEKQsLjHplnr282P5jcfT+d4P1/by1ufzBuK38saSX/Onl4v+3rKDnXkQnKW921TsAAAAAAAAAAAAAAAAAAAAAYEctAFM5GyCfj37Htrrs/7m75fy0qJn8wrmv/r60qf/n5OD/lINxtlhBMBRyZG9BAAAAAAAAAAAAAAAAAAAAAF5FLAB0XkYAY0ovQrOonOS7saf9ysK5/o59atGNe2i4iHVimWRKKSlycrIhbHPQOwAAAAAAAAAAAAAAAAAAAAAAAAAAW0IoAAAAAABmTjRzp5qL/LqvpOlmTjZHYFNrDVxKQQ5tdNUmb2FrOoB6mAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfRisAXkUqJ417aNaAbFiSbVU/LXFzw0JwZoBAb22nLXiJ/whrePEA+H8AAPA/AADwfwAAAH8AAAB/AAAAAQAAAAEAAAABAAAAAAAAgAAAAMAAAADwAAAA+AAAAPwAAAD8AAAA/gEAAA=="
+          type="image/x-icon">
+    <style>
+        body {
+
+            background-color: #000;
+
+        }
+
+        .button, .textArea {
+            text-align: center
+        }
+
+        body, html {
+            height: 100%
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000
+        }
+
+        /*@media (min-width: 1440px) {*/
+        .button {
+            position: inherit;
+            background-color: #fff;
+            font-size: 50%;
+            padding: 13px 28px;
+            line-height: 60px;
+            color: #000;
+            text-transform: capitalize;
+            border-radius: 3%
+        }
+
+        #blockI {
+            z-index: -1;
+            display: none
+        }
+
+        #blockI.blockCh, #blockI.blockMz, #blockI.blockO, #blockI.blockSaf {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 2;
+            display: block;
+            opacity: 1
+        }
+
+        #blockI .block-p p {
+            color: #fff;
+            font-size: 23px;
+            line-height: 1;
+            padding-left: 10px
+        }
+
+        #blockI .block-p .t1 {
+            margin-top: 50px
+        }
+
+        :-webkit-full-screen #blockI .container {
+            left: 10px !important
+        }
+
+        :-moz-full-screen #blockI .container {
+            left: 10px !important;
+            text-align: left;
+            right: unset !important;
+            top: 20px
+        }
+
+        :fullscreen #blockI .container {
+            left: 10px !important
+        }
+
+        :-webkit-full-screen #blockI.blockO {
+            background: 0 0
+        }
+
+        :fullscreen #blockI.blockO {
+            background: 0 0
+        }
+
+        :-webkit-full-screen #blockI .arrow {
+            margin-left: -25px
+        }
+
+        :-moz-full-screen #blockI .arrow {
+            margin-left: 25px
+        }
+
+        :fullscreen #blockI .arrow {
+            margin-left: -20px
+        }
+
+        #blockI.blockMz .container {
+            left: 180px
+        }
+
+        #blockI.blockO .container, #blockI.blockSaf .container {
+            top: 50px;
+            left: 50% !important;
+            text-align: right;
+            transform: translate(-50%, -35px)
+        }
+
+        #blockI.blockO .container .arrow, #blockI.blockSaf .container .arrow {
+            margin-left: unset;
+            margin-right: 10px
+        }
+
+        #blockI.blockSaf .container {
+            top: 50px;
+            left: 50%;
+            text-align: right
+        }
+
+        #blockI .container {
+            display: block;
+            position: absolute;
+            text-align: center;
+            width: 355px
+        }
+
+        #blockI.blockCh .container {
+            left: 73px
+        }
+
+        #blockI .block-p {
+            display: inline-block
+        }
+
+        .textArea {
+            position: relative;
+            font-weight: 400;
+            color: #fff;
+            padding-top: 17%;
+            padding-bottom: 50px;
+            font-size: 400%;
+            z-index: 9
+        }
+
+        #blockI .container .arrow {
+            width: 100px;
+            height: 170px;
+            margin-top: 200px;
+            margin-left: -20px;
+            -webkit-animation: mover .5s infinite alternate;
+            animation: mover .5s infinite alternate
+        }
+
+        /*
+          ##Device = Tablets, Ipads (portrait)
+          ##Screen = B/w 768px to 1024px
+        */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+            .textArea {
+                padding-top: 10%;
+            }
+
+            #blockI .container .arrow {
+                margin-top: 800px;
+            }
+
+            #blockI.blockCh .container {
+                position: relative;
+                padding-right: 50px;
+                float: right;
+            }
+        }
+
+        /*
+          ##Device = Tablets, Ipads (landscape)
+          ##Screen = B/w 768px to 1024px
+        */
+        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+            .textArea {
+                padding-top: 10%;
+            }
+
+            #blockI .container .arrow {
+                margin-top: 400px;
+            }
+
+            #blockI.blockCh .container {
+                position: relative;
+                padding-right: 50px;
+                float: right;
+            }
+        }
+
+        /*
+          ##Device = Low Resolution Tablets, Mobiles (Landscape)
+          ##Screen = B/w 481px to 767px
+        */
+        @media (min-width: 481px) and (max-width: 767px) {
+            .textArea {
+                padding-top: 10%;
+            }
+
+            #blockI .container .arrow {
+                margin-top: 230px;
+            }
+
+            #blockI.blockCh .container {
+                position: relative;
+                padding-right: 50px;
+                float: right;
+            }
+        }
+
+        /*
+          ##Device = Most of the Smartphones Mobiles (Portrait)
+          ##Screen = B/w 320px to 479px
+        */
+        @media (min-width: 320px) and (max-width: 480px) {
+            @media (min-width: 481px) and (max-width: 767px) {
+                .textArea {
+                    padding-top: 10%;
+                }
+
+                #blockI .container .arrow {
+                    margin-top: 150px;
+                }
+
+                #blockI.blockCh .container {
+                    position: relative;
+                    padding-right: 50px;
+                    float: right;
+                }
+            }
+        }
+
+        @-webkit-keyframes mover {
+            0% {
+                transform: translateY(0)
+            }
+            100% {
+                transform: translateY(-30px)
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0)
+            }
+            100% {
+                transform: translateY(-30px)
+            }
+        }
+
+        @-moz-keyframes rotate {
+            from {
+                -moz-transform: rotate(0)
+            }
+            to {
+                -moz-transform: rotate(360deg)
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0)
+            }
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        body {
+            background: #000;
+            margin: 0;
+            padding: 0
+        }
+
+        .arrowup {
+            display: none
+        }
+
+    </style>
+
+
+</head>
+
+
+<body class="mainBody" id="page_release-search">
+</body>
+
+<script src="./script.js"></script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
